@@ -352,6 +352,42 @@
             max-width: none; /* Reset para o rodapé */
         }
 
+        /* Botões sociais novos */
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-buttons .btn {
+            padding: 12px 28px;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: var(--border-radius);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .social-buttons .linkedin {
+            background-color: #0A66C2;
+            color: white;
+        }
+
+        .social-buttons .linkedin:hover {
+            background-color: #084a99;
+            transform: translateY(-3px);
+        }
+
+        .social-buttons .instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            color: white;
+        }
+
+        .social-buttons .instagram:hover {
+            filter: brightness(0.85);
+            transform: translateY(-3px);
+        }
+
         /* Responsividade */
         @media (max-width: 768px) {
             header .container {
@@ -524,6 +560,12 @@
             <p>© 2025 PingDesk. Todos os direitos reservados.</p>
             <p>Help Desk para Provedores de Internet • Respostas Rápidas</p>
             <p>Feito com excelência por quem entende de suporte.</p>
+
+            <!-- Botões sociais adicionados aqui -->
+            <div class="social-buttons">
+                <a href="https://www.linkedin.com/company/pingdesk-central-help-desk/" target="_blank" rel="noopener noreferrer" class="btn linkedin">LinkedIn</a>
+                <a href="https://www.instagram.com/ping.desk/" target="_blank" rel="noopener noreferrer" class="btn instagram">Instagram</a>
+            </div>
         </div>
     </footer>
 </body>

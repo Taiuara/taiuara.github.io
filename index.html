@@ -29,7 +29,8 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-XRWJ3GYR72');
-    </script>
+</script>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PingDesk - Central Help-Desk para Provedores de Internet</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -159,7 +160,9 @@
 
         /* Seção Hero (Home) */
         #home {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Home.jpg') no-repeat center center/cover;
+            #home {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Home.jpg') no-repeat center center/cover;
+}
             color: var(--white-color);
             height: 100vh;
             display: flex;
@@ -295,74 +298,6 @@
             margin-right: 10px;
             font-size: 1.5rem;
             line-height: 1;
-        }
-
-        /* Planos e Pacotes */
-        #plans {
-            background-color: var(--white-color);
-            padding: 60px 20px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            max-width: 900px;
-            margin: 40px auto;
-            text-align: left;
-        }
-
-        #plans h2 {
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        #plans p.description {
-            text-align: center;
-            font-size: 1.15rem;
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            color: var(--dark-color);
-        }
-
-        .plan-group {
-            margin-bottom: 40px;
-        }
-
-        .plan-group h3 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-        }
-
-        ul.plan-list {
-            list-style: none;
-            padding-left: 0;
-            color: var(--dark-color);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        ul.plan-list li {
-            margin-bottom: 8px;
-        }
-
-        .btn-plan {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white-color);
-            padding: 12px 25px;
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            font-weight: 700;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        .btn-plan:hover {
-            background-color: #0056b3;
-            transform: translateY(-3px);
         }
 
         /* Seção Contato */
@@ -529,15 +464,6 @@
             }
         }
     </style>
-
-    <script>
-        function enviarMensagem(pacote) {
-            const telefone = "554732300424";
-            const mensagem = encodeURIComponent(`Quero o pacote ${pacote}`);
-            const url = `https://wa.me/${telefone}?text=${mensagem}`;
-            window.open(url, "_blank");
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -628,57 +554,82 @@
                 </ul>
             </div>
         </section>
+<section id="planos">
+    <div class="container">
+        <h2>Planos e Pacotes</h2>
+        <p>Escolha o pacote que melhor atende a sua operação e fale direto com a gente no WhatsApp.</p>
 
-        <!-- Seção de Planos e Pacotes -->
-        <section id="plans">
-            <h2>Planos e Pacotes</h2>
-            <p class="description">Escolha o pacote que melhor atende a sua operação e fale direto com a gente no WhatsApp.</p>
-
-            <div class="plan-group">
-                <h3>Plano Mensal - Serviços Essenciais</h3>
-                <ul class="plan-list">
-                    <li>Atendimento até 200 chamados/mês</li>
-                    <li>Suporte Técnico Nível 1, 2 e 3</li>
-                    <li>Monitoramento e atendimento via plataforma integrada</li>
-                    <li>Relatórios mensais de desempenho</li>
-                </ul>
-                <button class="btn-plan" onclick="enviarMensagem('Mensal - Serviços Essenciais')">Solicitar Plano Mensal</button>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>📞 Atendimento 24h / 7 dias</h3>
+                <p>Inclui até 500 chamados/mês.</p>
+                <a href="https://wa.me/554732300424?text=Quero%20o%20pacote%20Atendimento%2024h%20-%20500%20chamados" target="_blank" class="whatsapp-button">
+                    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon"/> Quero este pacote
+                </a>
             </div>
 
-            <div class="plan-group">
-                <h3>Pacote Avulso - Chamados Extras</h3>
-                <ul class="plan-list">
-                    <li>Chamados acima da franquia do plano mensal</li>
-                    <li>Cobrança por chamado adicional: R$1,50 por chamado</li>
-                    <li>Flexibilidade para aumentar conforme demanda</li>
-                </ul>
-                <button class="btn-plan" onclick="enviarMensagem('Pacote Avulso - Chamados Extras')">Solicitar Pacote Avulso</button>
+            <div class="service-card">
+                <h3>🌙 Fora do Horário Comercial</h3>
+                <p>Inclui até 250 chamados/mês.</p>
+                <a href="https://wa.me/554732300424?text=Quero%20o%20pacote%20Fora%20do%20Horário%20Comercial%20-%20250%20chamados" target="_blank" class="whatsapp-button">
+                    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon"/> Quero este pacote
+                </a>
             </div>
-        </section>
 
-        <!-- Seção de Contato -->
+            <div class="service-card">
+                <h3>🎯 Finais de Semana e Feriados</h3>
+                <p>Inclui até 100 chamados/mês.</p>
+                <a href="https://wa.me/554732300424?text=Quero%20o%20pacote%20Finais%20de%20Semana%20-%20100%20chamados" target="_blank" class="whatsapp-button">
+                    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon"/> Quero este pacote
+                </a>
+            </div>
+        </div>
+
+        <br><br>
+        <h3>Adicional caso ultrapasse a franquia:</h3>
+        <ul class="features-list">
+            <li>Nível 1 (Suporte, Financeiro, Comercial e Pré-venda): R$ 3,50</li>
+            <li>Nível 2 (Suporte técnico especializado): R$ 4,50</li>
+            <li>Atendimentos massivos: R$ 1,50</li>
+        </ul>
+
+        <h3 style="margin-top: 40px;">Planos por chamado (sem mensalidade fixa):</h3>
+        <ul class="features-list">
+            <li>Nível 1 (Suporte, Financeiro, Comercial e Pré-venda): R$ 5,50</li>
+            <li>Nível 2 (Suporte técnico especializado): R$ 6,50</li>
+            <li>Atendimentos massivos: R$ 3,50</li>
+        </ul>
+
+        <a href="https://wa.me/554732300424?text=Quero%20um%20plano%20por%20chamado%20sem%20mensalidade%20fixa" target="_blank" class="whatsapp-button">
+            <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon"/> Quero plano por chamado
+        </a>
+    </div>
+</section>
+
         <section id="contact">
             <div class="container">
-                <h2>Contato</h2>
-                <p>Quer conversar? Nosso time está pronto para te atender!</p>
+                <h2>Fale com a PingDesk!</h2>
+                <p>Estamos prontos para transformar seu suporte interno.</p>
                 <div class="contact-info">
-                    <p>📞 Telefone: <a href="tel:+554732300424">(47) 3230-0424</a></p>
-                    <p>📱 WhatsApp: <a href="https://wa.me/554732300424" target="_blank" rel="noopener noreferrer">Clique aqui para falar conosco</a></p>
-                    <p>✉️ Email: <a href="mailto:contato@pingdesk.com.br">contato@pingdesk.com.br</a></p>
+                    <p>📬 <a href="mailto:contato@pingdesk.com.br">contato@pingdesk.com.br</a></p>
+                    <a href="https://wa.me/554732300424" target="_blank" class="whatsapp-button">
+                        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon"/> WhatsApp
+                    </a>
                 </div>
-                <a href="https://wa.me/554732300424" target="_blank" class="whatsapp-button" rel="noopener noreferrer">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon"> Fale Conosco pelo WhatsApp
-                </a>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>© 2025 PingDesk - Todos os direitos reservados.</p>
+            <p>© 2025 PingDesk. Todos os direitos reservados.</p>
+            <p>Help Desk para Provedores de Internet • Respostas Rápidas</p>
+            <p>Feito com excelência por quem entende de suporte.</p>
+
+            <!-- Botões sociais adicionados aqui -->
             <div class="social-buttons">
-                <a href="https://linkedin.com/company/pingdesk" target="_blank" class="btn linkedin" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://instagram.com/pingdesk" target="_blank" class="btn instagram" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.linkedin.com/company/pingdesk-central-help-desk/" target="_blank" rel="noopener noreferrer" class="btn linkedin">LinkedIn</a>
+                <a href="https://www.instagram.com/ping.desk/" target="_blank" rel="noopener noreferrer" class="btn instagram">Instagram</a>
             </div>
         </div>
     </footer>

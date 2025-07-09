@@ -36,13 +36,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #007bff; /* Azul vibrante */
-            --secondary-color: #28a745; /* Verde para destaque/botões */
-            --dark-color: #47484a; /* Cinza escuro para texto */
-            --light-color: #72787e; /* Cinza claro para fundos */
+            --primary-color: #4A90E2; /* Azul Profundo */
+            --secondary-color: #00C896; /* Verde Aqua */
+            --dark-color: #1C1C1C; /* Texto */
+            --light-color: #F7F9FB; /* Fundo claro */
+            --footer-color: #222831; /* Rodapé */
             --white-color: #ffffff;
-            --border-radius: 8px;
-            --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         * {
@@ -55,7 +56,7 @@
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: var(--dark-color);
-            background-color: var(--dark-color);
+            background-color: var(--light-color);
             scroll-behavior: smooth;
         }
 
@@ -65,18 +66,17 @@
             padding: 20px;
         }
 
-        /* Header e Navegação */
-     header {
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.75);
-    color: var(--dark-color);
-    padding: 1rem 0;
-    box-shadow: var(--shadow);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    transition: top 0.4s ease-in-out;
+        header {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--dark-color);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.4s ease-in-out;
         }
 
         header .container {
@@ -112,7 +112,6 @@
             color: var(--primary-color);
         }
 
-        /* Seções Gerais */
         section {
             padding: 80px 0;
             text-align: center;
@@ -157,15 +156,12 @@
         }
 
         .btn:hover {
-            background: #218838; /* Um pouco mais escuro que secondary-color */
+            background: #00b68a;
             transform: translateY(-2px);
         }
 
-        /* Seção Hero (Home) */
         #home {
-            #home {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Home.jpg') no-repeat center center/cover;
-}
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Home.jpg') no-repeat center center/cover;
             color: var(--white-color);
             height: 100vh;
             display: flex;
@@ -192,140 +188,34 @@
             font-weight: 300;
         }
 
-        /* Seções de texto com ícones/listas */
-        .features-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 30px;
+        #contact p {
+            color: var(--white-color);
+        }
+
+        footer {
+            background: var(--footer-color);
+            color: var(--white-color);
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        footer .container {
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 10px;
         }
 
-        .features-list li {
-            background: var(--white-color);
-            border-left: 5px solid var(--primary-color);
-            padding: 20px 30px;
-            margin-bottom: 15px;
-            text-align: left;
-            width: 100%;
-            max-width: 700px;
-            box-shadow: var(--shadow);
-            border-radius: var(--border-radius);
-            font-size: 1.1rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
+        .social-buttons .linkedin {
+            background-color: #0A66C2;
         }
 
-        .features-list li::before {
-            content: '✔️'; /* Ou um ícone mais sofisticado via font-awesome */
-            margin-right: 15px;
-            color: var(--secondary-color);
-            font-size: 1.5rem;
-        }
-
-        .process-steps {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .step-card {
-            background: var(--white-color);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            flex: 1;
-            min-width: 280px;
-            max-width: 350px;
-            text-align: left;
-            transition: transform 0.3s ease;
-        }
-
-        .step-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .step-card h4 {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .step-card p {
-            font-size: 1rem;
-            margin-bottom: 0;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .service-card {
-            background: var(--white-color);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            text-align: left;
-            border-top: 5px solid var(--primary-color);
-        }
-
-        .service-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 10px;
-            color: var(--dark-color);
-        }
-
-        .service-card ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 15px;
-        }
-
-        .service-card ul li {
-            margin-bottom: 10px;
-            font-size: 1.05rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .service-card ul li::before {
-            content: '•';
-            color: var(--secondary-color);
-            margin-right: 10px;
-            font-size: 1.5rem;
-            line-height: 1;
-        }
-
-        /* Seção Contato */
-        #contact .contact-info {
-            margin-top: 30px;
-        }
-
-        #contact .contact-info p {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        #contact .contact-info a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        #contact .contact-info a:hover {
-            color: var(--dark-color);
+        .social-buttons .instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
         }
 
         .whatsapp-button {
-            background-color: #25d366; /* Cor do WhatsApp */
+            background-color: #25d366;
             color: var(--white-color);
             padding: 15px 30px;
             border-radius: var(--border-radius);
@@ -346,125 +236,6 @@
         .whatsapp-button img {
             width: 24px;
             height: 24px;
-        }
-
-        /* Rodapé */
-        footer {
-            background: var(--dark-color);
-            color: var(--white-color);
-            padding: 30px 0;
-            font-size: 0.9rem;
-        }
-
-        footer .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        footer p {
-            margin-bottom: 0;
-            font-size: 0.9rem;
-            max-width: none; /* Reset para o rodapé */
-        }
-
-        /* Botões sociais novos */
-        .social-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-buttons .btn {
-            padding: 12px 28px;
-            font-weight: 700;
-            font-size: 1rem;
-            border-radius: var(--border-radius);
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .social-buttons .linkedin {
-            background-color: #0A66C2;
-            color: white;
-        }
-
-        .social-buttons .linkedin:hover {
-            background-color: #084a99;
-            transform: translateY(-3px);
-        }
-
-        .social-buttons .instagram {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-            color: white;
-        }
-
-        .social-buttons .instagram:hover {
-            filter: brightness(0.85);
-            transform: translateY(-3px);
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            header .container {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-
-            nav ul li {
-                margin: 0;
-            }
-
-            #home h1 {
-                font-size: 2.8rem;
-            }
-
-            #home p {
-                font-size: 1.2rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .process-steps {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .step-card {
-                width: 90%;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            #home h1 {
-                font-size: 2.2rem;
-            }
-
-            #home p {
-                font-size: 1rem;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            .btn, .whatsapp-button {
-                padding: 12px 25px;
-                font-size: 0.9rem;
-            }
         }
     </style>
 </head>

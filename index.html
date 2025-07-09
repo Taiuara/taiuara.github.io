@@ -35,15 +35,14 @@
     <title>PingDesk - Central Help-Desk para Provedores de Internet</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-    <style>
         :root {
-            --primary-color: #007bff;
-            --secondary-color: #28a745;
-            --dark-color: #47484a;
-            --light-color: #f0f0f0;
+            --primary-color: #007bff; /* Azul vibrante */
+            --secondary-color: #28a745; /* Verde para destaque/botões */
+            --dark-color: #47484a; /* Cinza escuro para texto */
+            --light-color: #72787e; /* Cinza claro para fundos */
             --white-color: #ffffff;
-            --border-radius: 12px;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         * {
@@ -54,18 +53,30 @@
 
         body {
             font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
             color: var(--dark-color);
-            background-color: var(--white-color);
-            line-height: 1.8;
+            background-color: var(--dark-color);
+            scroll-behavior: smooth;
         }
 
-        header {
-            background: var(--white-color);
-            padding: 1rem 0;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header e Navegação */
+     header {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.75);
+    color: var(--dark-color);
+    padding: 1rem 0;
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: top 0.4s ease-in-out;
         }
 
         header .container {
@@ -74,166 +85,415 @@
             align-items: center;
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 1rem;
-        }
-
-        nav a {
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
             text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
             color: var(--dark-color);
-            font-weight: 500;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 40px 20px;
+        nav ul li a:hover {
+            color: var(--primary-color);
         }
 
+        /* Seções Gerais */
         section {
-            background: linear-gradient(135deg, #e0f2ff, #f7faff);
-            border: 1px solid rgba(0, 123, 255, 0.15);
-            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.05);
-            border-radius: 12px;
-            margin: 40px 0;
-            padding: 60px 20px;
+            padding: 80px 0;
             text-align: center;
         }
 
-        h1, h2, h3, h4 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
+        section:nth-of-type(even) {
+            background-color: var(--white-color);
         }
 
-        p, li {
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        p {
             font-size: 1.1rem;
-            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn {
             display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 12px 24px;
+            background: var(--secondary-color);
+            color: var(--white-color);
+            padding: 15px 30px;
             border-radius: var(--border-radius);
             text-decoration: none;
             font-weight: 600;
-            margin-top: 15px;
-            transition: background-color 0.3s;
+            transition: background 0.3s ease, transform 0.2s ease;
+            margin-top: 20px;
         }
 
         .btn:hover {
-            background-color: #0056b3;
+            background: #218838; /* Um pouco mais escuro que secondary-color */
+            transform: translateY(-2px);
         }
 
-        .services-grid, .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+        /* Seção Hero (Home) */
+        #home {
+            #home {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Home.jpg') no-repeat center center/cover;
+}
+            color: var(--white-color);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #home .content {
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        #home h1 {
+            font-size: 3.8rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        #home p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* Seções de texto com ícones/listas */
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .features-list li {
+            background: var(--white-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px 30px;
+            margin-bottom: 15px;
+            text-align: left;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .features-list li::before {
+            content: '✔️'; /* Ou um ícone mais sofisticado via font-awesome */
+            margin-right: 15px;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
             margin-top: 40px;
         }
 
-        .service-card, .step-card {
-            background-color: var(--white-color);
+        .step-card {
+            background: var(--white-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .step-card h4 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .step-card p {
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: var(--white-color);
             padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             text-align: left;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid var(--primary-color);
         }
 
-        .service-card:hover, .step-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
         }
 
-        .features-list {
+        .service-card ul {
             list-style: none;
             padding: 0;
-            text-align: left;
-            max-width: 600px;
-            margin: 0 auto;
+            margin-top: 15px;
         }
 
-        .features-list li::before {
-            content: "✔️ ";
-        }
-
-        .contact-info a {
-            display: inline-block;
-            margin: 10px;
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: 500;
-        }
-
-        .whatsapp-button {
-            display: inline-flex;
+        .service-card ul li {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+            display: flex;
             align-items: center;
-            gap: 10px;
-            font-weight: 600;
         }
 
-        footer {
-            background-color: var(--light-color);
-            padding: 30px 0;
-            text-align: center;
+        .service-card ul li::before {
+            content: '•';
+            color: var(--secondary-color);
+            margin-right: 10px;
+            font-size: 1.5rem;
+            line-height: 1;
         }
 
-        .social-buttons a {
-            margin: 5px;
-            padding: 10px 20px;
-            border-radius: var(--border-radius);
-            background-color: var(--primary-color);
-            color: white;
-            text-decoration: none;
-            display: inline-block;
-            font-weight: 600;
-        }
-
-        .highlight-box {
-            background-color: #ffffff;
-            border: 1px solid #d6e9f9;
-            border-left: 5px solid var(--primary-color);
-            padding: 25px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
+        /* Seção Contato */
+        #contact .contact-info {
             margin-top: 30px;
         }
 
-        .highlight-box h3 {
-            margin-top: 0;
+        #contact .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        #contact .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        #contact .contact-info a:hover {
+            color: var(--dark-color);
+        }
+
+        .whatsapp-button {
+            background-color: #25d366; /* Cor do WhatsApp */
+            color: var(--white-color);
+            padding: 15px 30px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s ease;
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #1da851;
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-button img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Rodapé */
+        footer {
+            background: var(--dark-color);
+            color: var(--white-color);
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        footer p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            max-width: none; /* Reset para o rodapé */
+        }
+
+        /* Botões sociais novos */
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-buttons .btn {
+            padding: 12px 28px;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: var(--border-radius);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .social-buttons .linkedin {
+            background-color: #0A66C2;
+            color: white;
+        }
+
+        .social-buttons .linkedin:hover {
+            background-color: #084a99;
+            transform: translateY(-3px);
+        }
+
+        .social-buttons .instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            color: white;
+        }
+
+        .social-buttons .instagram:hover {
+            filter: brightness(0.85);
+            transform: translateY(-3px);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            nav ul li {
+                margin: 0;
+            }
+
+            #home h1 {
+                font-size: 2.8rem;
+            }
+
+            #home p {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .step-card {
+                width: 90%;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #home h1 {
+                font-size: 2.2rem;
+            }
+
+            #home p {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .btn, .whatsapp-button {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <a href="#home" class="logo">PingDesk</a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Sobre a PingDesk</a></li>
+                    <li><a href="#how-it-works">Como Funciona</a></li>
+                    <li><a href="#services">Nossos Serviços</a></li>
+                    <li><a href="#why-choose">Por que escolher?</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<header>
-  <div class="container">
-    <a class="logo" href="#">PingDesk</a>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">Sobre</a></li>
-        <li><a href="#contact">Contato</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<section id="home">
-  <div class="container">
-    <h1>Seu suporte técnico interno com resposta rápida</h1>
-    <p>Especialista em Help Desk para provedores de internet.</p>
-    <div class="highlight-box">
-      <h3>💡 PingDesk resolve com agilidade e profissionalismo</h3>
-      <p>Atendimento 24/7 com equipe treinada e integração total com sua operação.</p>
-      <p>Transforme seu suporte interno em um setor de excelência.</p>
-      <a href="#contact" class="btn">Fale com a gente</a>
-    </div>
-  </div>
+    <main>
+        <section id="home">
+            <div class="content">
+                <h1>Seu suporte técnico interno com resposta rápida, equipe nível 3 e zero enrolação.</h1>
+                <p>Especialista em Help Desk para provedores de internet.</p>
+                <p>Mais agilidade, mais organização, menos dor de cabeça.</p>
+                <a href="#contact" class="btn">Fale com a gente</a>
+                <a href="#contact" class="btn" style="margin-left: 20px;">Solicite um orçamento</a>
+            </div>
         </section>
 
         <section id="about">
@@ -260,7 +520,7 @@
                     </div>
                     <div class="step-card">
                         <h4>A gente atende com excelência</h4>
-                        <p>Nossa equipe assume o atendimento interno.</p>
+                        <p>Nossa equipe assume o atendimento interno com foco técnico.</p>
                     </div>
                     <div class="step-card">
                         <h4>Você ganha tempo e eficiência</h4>
@@ -277,11 +537,8 @@
                     <div class="service-card">
                         <h3>🔧 Help Desk Técnico</h3>
                         <ul>
-                            <li>Suporte ao cliente final nível 1 e 2</li>
-                            <li>Vendas receptivas</li>
-                            <li>Auxílio comercial e financeiro</li>
-                            <li>Atendimentos via chat e via ligação</li>
-                            <li>Contato receptivo e ativo</li>
+                            <li>Nível 1, 2 e 3</li>
+                            <li>Atendimento direto em sua plataforma</li>
                             <li>Suporte técnico que fala a língua do cliente</li>
                         </ul>
                     </div>
@@ -300,8 +557,8 @@
                 </ul>
             </div>
         </section>
-        
-<section id="pricing">
+
+        <section id="pricing">
   <div class="container">
     <h2>Planos e Pacotes</h2>
     <p>Escolha o pacote que melhor atende à sua operação e fale direto com a gente no WhatsApp.</p>
@@ -372,8 +629,7 @@
       </div>
     </div>
   </div>
-    
-    <!-- Orçamento personalizado -->
+            <!-- Orçamento personalizado -->
 <div style="margin-top: 60px; text-align: center;">
   <h3 style="color: var(--primary-color); font-size: 1.6rem; margin-bottom: 20px;">
     Não encontrou um plano ideal?
@@ -390,7 +646,6 @@
 </div>
 
 </section>
-
 
 
         <section id="contact">
@@ -420,8 +675,7 @@
             </div>
         </div>
     </footer>
-    
-<script>
+    <script>
   let lastScrollTop = 0;
   const header = document.querySelector("header");
 

@@ -35,35 +35,28 @@
     <title>PingDesk - Central Help-Desk para Provedores de Internet</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-:root {
-    --primary-color: #4A90E2; /* Azul Profundo */
-    --secondary-color: #00C896; /* Verde Aqua */
-    --dark-color: #000000; /* Texto preto */
-    --light-color: #FAFAFA; /* Fundo clarinho tipo branco gelo */
-    --white-color: #ffffff; /* Branco puro pra quadros */
-    --footer-color: #222831; /* Rodapé escuro */
-    --border-radius: 12px;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+        :root {
+            --primary-color: #007bff; /* Azul vibrante */
+            --secondary-color: #28a745; /* Verde para destaque/botões */
+            --dark-color: #47484a; /* Cinza escuro para texto */
+            --light-color: #72787e; /* Cinza claro para fundos */
+            --white-color: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
 
-body {
-    background-color: var(--light-color);
-    color: var(--dark-color);
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-section:nth-of-type(even) {
-    background-color: var(--white-color);
-    color: var(--dark-color);
-}
-
-.features-list li,
-.service-card,
-.step-card {
-    background-color: var(--white-color);
-    color: var(--dark-color);
-    box-shadow: var(--shadow);
-    border-radius: var(--border-radius);
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--dark-color);
+            scroll-behavior: smooth;
         }
 
         .container {

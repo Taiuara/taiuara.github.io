@@ -66,15 +66,18 @@
         }
 
         /* Header e Navegação */
-        header {
-            background: var(--white-color);
-            color: var(--dark-color);
-            padding: 1rem 0;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+      header {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.75);
+    color: var(--dark-color);
+    padding: 1rem 0;
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: top 0.4s ease-in-out;
+}
 
         header .container {
             display: flex;
@@ -678,5 +681,25 @@
             </div>
         </div>
     </footer>
+    
+<script>
+  let lastScrollTop = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scroll pra baixo - esconde
+      header.style.top = "-100px";
+    } else {
+      // Scroll pra cima - mostra
+      header.style.top = "0";
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
+
 </body>
 </html>

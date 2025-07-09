@@ -4,16 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PingDesk - Central Help-Desk</title>
-
-  <link rel="icon" href="/faviconio/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --primary-color: #007bff;
       --secondary-color: #28a745;
       --dark-color: #47484a;
-      --light-color: #f0f4f8;
+      --light-color: #f7fbff;
       --white-color: #ffffff;
       --border-radius: 8px;
       --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -27,15 +24,16 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      line-height: 1.9;
-      background-color: var(--white-color);
+      line-height: 1.7;
+      font-weight: 300;
       color: var(--dark-color);
+      background-color: var(--white-color);
       scroll-behavior: smooth;
     }
 
     header {
       backdrop-filter: blur(10px);
-      background-color: rgba(255, 255, 255, 0.75);
+      background-color: rgba(255, 255, 255, 0.95);
       color: var(--dark-color);
       padding: 1rem 0;
       box-shadow: var(--shadow);
@@ -61,7 +59,7 @@
       gap: 20px;
     }
 
-    nav ul li a {
+    nav a {
       text-decoration: none;
       color: var(--dark-color);
       font-weight: 500;
@@ -77,45 +75,46 @@
       margin: 20px auto;
       max-width: 1200px;
       position: relative;
+      overflow: hidden;
     }
 
     section::before {
       content: "";
       position: absolute;
-      bottom: 10px;
-      right: 10px;
+      bottom: 15px;
+      right: 15px;
       width: 100px;
       height: 100px;
       background-image: url('https://github.com/Taiuara/taiuara.github.io/raw/main/Logo_Sem_Fundo.png');
       background-repeat: no-repeat;
       background-size: contain;
-      opacity: 0.08;
+      opacity: 0.07;
       pointer-events: none;
     }
 
-    h1, h2, h3, h4 {
-      color: var(--primary-color);
+    h1, h2, h3 {
+      font-weight: 600;
       margin-bottom: 1rem;
+      color: var(--primary-color);
     }
 
     p {
+      font-size: 1.15rem;
       margin-bottom: 1rem;
-      font-weight: 300;
     }
 
     .btn {
       display: inline-block;
-      background-color: var(--primary-color);
-      color: white;
       padding: 10px 20px;
+      background: var(--primary-color);
+      color: white;
       border-radius: var(--border-radius);
       text-decoration: none;
-      font-weight: 500;
       transition: background 0.3s;
     }
 
     .btn:hover {
-      background-color: #0056b3;
+      background: #0056b3;
     }
   </style>
 </head>
@@ -126,9 +125,8 @@
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#about">Sobre</a></li>
-          <li><a href="#services">Serviços</a></li>
-          <li><a href="#contact">Contato</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
     </div>
@@ -136,25 +134,20 @@
 
   <main>
     <section id="home">
-      <h1>Seu suporte técnico interno com resposta rápida, equipe nível 3 e zero enrolação.</h1>
-      <p>Especialistas em Help Desk para provedores de internet.</p>
-      <a href="#contact" class="btn">Fale com a gente</a>
+      <h1>Seu suporte técnico interno com resposta rápida</h1>
+      <p>Equipe nível 3, sem enrolação e com atendimento sob medida pra provedores!</p>
+      <a href="#contato" class="btn">Fale com a gente</a>
     </section>
 
-    <section id="about">
+    <section id="sobre">
       <h2>Sobre a PingDesk</h2>
-      <p>Somos uma central especializada em atendimento técnico interno para provedores. Atuamos com eficiência, agilidade e integração total à sua operação.</p>
+      <p>A gente entende de bastidores de provedor. E mais que isso, resolve!</p>
     </section>
 
-    <section id="services">
-      <h2>Nossos Serviços</h2>
-      <p>Oferecemos atendimento nível 1, 2 e gestão de chamados com alto padrão técnico.</p>
-    </section>
-
-    <section id="contact">
+    <section id="contato">
       <h2>Fale com a PingDesk</h2>
-      <p>Vamos transformar o seu suporte técnico interno.</p>
-      <a href="https://wa.me/554732300424" class="btn" target="_blank">Fale no WhatsApp</a>
+      <p>📬 contato@pingdesk.com.br</p>
+      <p>📱 WhatsApp: (47) 3230-0424</p>
     </section>
   </main>
 
@@ -162,15 +155,9 @@
     let lastScrollTop = 0;
     const header = document.querySelector("header");
 
-    window.addEventListener("scroll", function () {
+    window.addEventListener("scroll", function() {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-      if (scrollTop > lastScrollTop) {
-        header.style.top = "-100px";
-      } else {
-        header.style.top = "0";
-      }
-
+      header.style.top = (scrollTop > lastScrollTop) ? "-100px" : "0";
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
   </script>

@@ -5,28 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PingDesk - Central Help-Desk para Provedores de Internet</title>
 
-    <!-- FAVICON POWER -->
-    <link rel="icon" href="/faviconio/favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/png" sizes="32x32" href="/faviconio/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/faviconio/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/faviconio/apple-touch-icon.png">
-    <link rel="manifest" href="/faviconio/site.webmanifest">
-    <link rel="icon" type="image/png" sizes="192x192" href="/faviconio/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/faviconio/android-chrome-512x512.png">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="PingDesk - Central Help-Desk">
-    <meta property="og:description" content="Atendimento técnico interno terceirizado para provedores de internet.">
-    <meta property="og:url" content="https://pingdesk.com.br">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://pingdesk.com.br/imagem-compartilhamento.jpg">
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* CSS original mantido (mesmo do código anterior com as classes .services-grid, .service-card, .btn, etc.) */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #28a745;
+            --dark-color: #47484a;
+            --light-color: #f8f9fa;
+            --white-color: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: var(--white-color);
+            padding: 20px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: var(--white-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .service-card ul li {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .btn img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        footer {
+            background: var(--dark-color);
+            color: var(--white-color);
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .social-buttons {
+            margin-top: 20px;
+        }
+
+        .social-buttons a {
+            margin: 0 10px;
+        }
     </style>
 </head>
 <body>
@@ -36,11 +170,7 @@
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Sobre a PingDesk</a></li>
-                    <li><a href="#how-it-works">Como Funciona</a></li>
-                    <li><a href="#services">Nossos Serviços</a></li>
                     <li><a href="#pricing">Planos</a></li>
-                    <li><a href="#why-choose">Por que escolher?</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
@@ -48,8 +178,6 @@
     </header>
 
     <main>
-        <!-- Seções anteriores mantidas: home, about, how-it-works, services -->
-
         <section id="pricing">
             <div class="container">
                 <h2>Planos & Preços</h2>
@@ -59,33 +187,23 @@
                         <ul>
                             <li>Até 500 chamados</li>
                             <li>Inclui finais de semana e feriados</li>
-                            <li>Excedente:
-                                <br>• Nível 1: R$ 3,50
-                                <br>• Nível 2: R$ 4,50
-                                <br>• Massivos: R$ 1,50
-                            </li>
+                            <li>Excedente:<br>• Nível 1: R$ 3,50<br>• Nível 2: R$ 4,50<br>• Massivos: R$ 1,50</li>
                         </ul>
-                        <a class="btn whatsapp-button" href="https://wa.me/554732300424?text=Quero%20o%20pacote%20Full%2024h" target="_blank">
+                        <a class="btn" href="https://wa.me/554732300424?text=Quero%20o%20pacote%20Full%2024h" target="_blank">
                             <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon"/> Quero o pacote Full 24h
                         </a>
                     </div>
-
                     <div class="service-card">
                         <h3>🌙 Fora do Horário Comercial</h3>
                         <ul>
                             <li>Até 250 chamados</li>
                             <li>Atendimentos fora do horário útil</li>
-                            <li>Excedente:
-                                <br>• Nível 1: R$ 3,50
-                                <br>• Nível 2: R$ 4,50
-                                <br>• Massivos: R$ 1,50
-                            </li>
+                            <li>Excedente:<br>• Nível 1: R$ 3,50<br>• Nível 2: R$ 4,50<br>• Massivos: R$ 1,50</li>
                         </ul>
-                        <a class="btn whatsapp-button" href="https://wa.me/554732300424?text=Quero%20o%20pacote%20Fora%20do%20Comercial" target="_blank">
+                        <a class="btn" href="https://wa.me/554732300424?text=Quero%20o%20pacote%20Fora%20do%20Comercial" target="_blank">
                             <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon"/> Quero o pacote Fora do Comercial
                         </a>
                     </div>
-
                     <div class="service-card">
                         <h3>📦 Pacote por Chamado</h3>
                         <ul>
@@ -94,7 +212,7 @@
                             <li>• Nível 2: R$ 6,50 por chamado</li>
                             <li>• Massivos: R$ 3,50 por chamado</li>
                         </ul>
-                        <a class="btn whatsapp-button" href="https://wa.me/554732300424?text=Quero%20o%20pacote%20por%20Chamado" target="_blank">
+                        <a class="btn" href="https://wa.me/554732300424?text=Quero%20o%20pacote%20por%20Chamado" target="_blank">
                             <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon"/> Quero o pacote por Chamado
                         </a>
                     </div>
@@ -102,18 +220,23 @@
             </div>
         </section>
 
-        <!-- Continuação das seções: why-choose, contact -->
-
+        <section id="contact">
+            <div class="container">
+                <h2>Fale com a PingDesk</h2>
+                <p>contato@pingdesk.com.br</p>
+                <a class="btn" href="https://wa.me/554732300424" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon"/> Chamar no WhatsApp
+                </a>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="container">
             <p>© 2025 PingDesk. Todos os direitos reservados.</p>
-            <p>Help Desk para Provedores de Internet • Respostas Rápidas</p>
-            <p>Feito com excelência por quem entende de suporte.</p>
             <div class="social-buttons">
-                <a href="https://www.linkedin.com/company/pingdesk-central-help-desk/" target="_blank" rel="noopener noreferrer" class="btn linkedin">LinkedIn</a>
-                <a href="https://www.instagram.com/ping.desk/" target="_blank" rel="noopener noreferrer" class="btn instagram">Instagram</a>
+                <a href="https://www.linkedin.com/company/pingdesk-central-help-desk/" class="btn" target="_blank">LinkedIn</a>
+                <a href="https://www.instagram.com/ping.desk/" class="btn" target="_blank">Instagram</a>
             </div>
         </div>
     </footer>

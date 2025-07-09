@@ -1,165 +1,368 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PingDesk - Central Help-Desk</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #007bff;
-      --secondary-color: #28a745;
-      --dark-color: #47484a;
-      --light-color: #f7fbff;
-      --white-color: #ffffff;
-      --border-radius: 8px;
-      --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+    <meta charset="UTF-8">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<!-- FAVICON POWER -->
+<link rel="icon" href="/faviconio/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="/faviconio/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/faviconio/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/faviconio/apple-touch-icon.png">
+<link rel="manifest" href="/faviconio/site.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="/faviconio/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/faviconio/android-chrome-512x512.png">
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.7;
-      font-weight: 300;
-      color: var(--dark-color);
-      background-color: var(--white-color);
-      scroll-behavior: smooth;
-    }
+<!-- FAVICON NA RAIZ PRA GOOGLE & COMPANHIA -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-    header {
-      backdrop-filter: blur(10px);
-      background-color: rgba(255, 255, 255, 0.95);
-      color: var(--dark-color);
-      padding: 1rem 0;
-      box-shadow: var(--shadow);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      transition: top 0.4s ease-in-out;
-    }
+    <!-- Open Graph -->
+    <meta property="og:title" content="PingDesk - Central Help-Desk">
+    <meta property="og:description" content="Atendimento técnico interno terceirizado para provedores de internet.">
+    <meta property="og:url" content="https://pingdesk.com.br">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://pingdesk.com.br/imagem-compartilhamento.jpg">
 
-    header .container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-    }
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XRWJ3GYR72"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XRWJ3GYR72');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PingDesk - Central Help-Desk para Provedores de Internet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+:root {
+    --primary-color: #007bff; /* Azul vibrante */
+    --secondary-color: #28a745; /* Verde para destaque/botões */
+    --dark-color: #47484a; /* Cinza escuro para texto */
+    --light-color: #72787e; /* Cinza claro para fundos */
+    --white-color: #ffffff;
+    --border-radius: 8px;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    nav a {
-      text-decoration: none;
-      color: var(--dark-color);
-      font-weight: 500;
-    }
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.9;
+    font-weight: 300; /* Fonte mais leve */
+    color: var(--dark-color);
+    background-color: var(--white-color);
+    scroll-behavior: smooth;
+}
 
-    section {
-      padding: 100px 20px 60px;
-      text-align: center;
-      background: linear-gradient(135deg, #e0f0ff, #f7fbff);
-      border: 1px solid rgba(0, 123, 255, 0.15);
-      box-shadow: 0 4px 8px rgba(0, 123, 255, 0.05);
-      border-radius: 10px;
-      margin: 20px auto;
-      max-width: 1200px;
-      position: relative;
-      overflow: hidden;
-    }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px; /* espaçamento interno maior */
+}
 
-    section::before {
-      content: "";
-      position: absolute;
-      bottom: 15px;
-      right: 15px;
-      width: 100px;
-      height: 100px;
-      background-image: url('https://github.com/Taiuara/taiuara.github.io/raw/main/Logo_Sem_Fundo.png');
-      background-repeat: no-repeat;
-      background-size: contain;
-      opacity: 0.07;
-      pointer-events: none;
-    }
+/* Header e Navegação (não mexer aqui se já estiver ok) */
+header {
+    background: var(--white-color);
+    color: var(--dark-color);
+    padding: 1rem 0;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-    h1, h2, h3 {
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: var(--primary-color);
-    }
+/* Seções com fundo degradê azul claro e borda com sombra */
+section {
+    padding: 80px 0;
+    text-align: center;
+    background: linear-gradient(135deg, #e0f2ff, #f7faff);
+    border: 1px solid rgba(0, 123, 255, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.05);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.7;
+}
 
-    p {
-      font-size: 1.15rem;
-      margin-bottom: 1rem;
-    }
+/* Remova totalmente este trecho, se ainda estiver no seu código: */
+section::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 100px;
+    height: 100px;
+    background-image: url('https://github.com/Taiuara/taiuara.github.io/raw/main/Logo_Sem_Fundo.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.07;
+    pointer-events: none;
+    filter: grayscale(100%) brightness(1.1);
+    z-index: 0;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background: var(--primary-color);
-      color: white;
-      border-radius: var(--border-radius);
-      text-decoration: none;
-      transition: background 0.3s;
-    }
+section > * {
+    position: relative;
+    z-index: 1;
+}
 
-    .btn:hover {
-      background: #0056b3;
-    }
-  </style>
+/* Textos mais leves e espaçados */
+p, li {
+    font-weight: 300;
+    font-size: 1.15rem;
+    margin-bottom: 1.3rem;
+}
+
+h2, h3, h4 {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Outros estilos já existentes (botoes, nav, etc) ficam iguais */
+
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="logo">PingDesk</div>
-      <nav>
+    <header>
+        <div class="container">
+            <a href="#home" class="logo">PingDesk</a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Sobre a PingDesk</a></li>
+                    <li><a href="#how-it-works">Como Funciona</a></li>
+                    <li><a href="#services">Nossos Serviços</a></li>
+                    <li><a href="#why-choose">Por que escolher?</a></li>
+                    <li><a href="#pricing">Planos e Pacotes</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="content">
+                <h1>Seu suporte técnico interno com resposta rápida, equipe nível 3 e zero enrolação.</h1>
+                <p>Especialista em Help Desk para provedores de internet.</p>
+                <p>Mais agilidade, mais organização, menos dor de cabeça.</p>
+                <a href="#contact" class="btn">Fale com a gente</a>
+                <a href="#contact" class="btn" style="margin-left: 20px;">Solicite um orçamento</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>Sobre a PingDesk</h2>
+                <p>Nós entendemos os bastidores do seu provedor.</p>
+                <p>Por isso criamos a PingDesk: uma central de suporte técnico interno dedicada exclusivamente a provedores de internet. Com uma equipe treinada e experiente, atuamos diretamente nas plataformas já utilizadas pelo seu time, garantindo uma comunicação fluida, respostas ágeis e alto nível técnico no atendimento.</p>
+                <h3>Nosso diferencial?</h3>
+                <ul class="features-list">
+                    <li>Atendimento com conhecimento de nível 3</li>
+                    <li>Respostas ágeis, sem enrolação</li>
+                    <li>Integração total com seus sistemas</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="how-it-works">
+            <div class="container">
+                <h2>Como Funciona</h2>
+                <div class="process-steps">
+                    <div class="step-card">
+                        <h4>Você nos adiciona à sua operação</h4>
+                        <p>Acesso à plataforma e alinhamento de processos.</p>
+                    </div>
+                    <div class="step-card">
+                        <h4>A gente atende com excelência</h4>
+                        <p>Nossa equipe assume o atendimento interno.</p>
+                    </div>
+                    <div class="step-card">
+                        <h4>Você ganha tempo e eficiência</h4>
+                        <p>Acompanhe indicadores e sinta a diferença no dia a dia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2>Nossos Serviços</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>🔧 Help Desk Técnico</h3>
+                        <ul>
+                            <li>Suporte ao cliente final nível 1 e 2</li>
+                            <li>Vendas receptivas</li>
+                            <li>Auxílio comercial e financeiro</li>
+                            <li>Atendimentos via chat e via ligação</li>
+                            <li>Contato receptivo e ativo</li>
+                            <li>Suporte técnico que fala a língua do cliente</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-choose">
+            <div class="container">
+                <h2>Por que escolher a PingDesk?</h2>
+                <ul class="features-list">
+                    <li>✅ Resposta rápida, porque tempo é link no ar</li>
+                    <li>✅ Equipe técnica qualificada com visão de provedor</li>
+                    <li>✅ Redução de gargalos operacionais</li>
+                    <li>✅ Atendimento direto, sem precisar treinar do zero</li>
+                </ul>
+            </div>
+        </section>
+        
+<section id="pricing">
+  <div class="container">
+    <h2>Planos e Pacotes</h2>
+    <p>Escolha o pacote que melhor atende à sua operação e fale direto com a gente no WhatsApp.</p>
+
+    <!-- Planos principais -->
+    <div class="services-grid">
+      <!-- Plano 1 -->
+      <div class="service-card">
+        <h3>📞 Atendimento 24h / 7 dias</h3>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><strong>R$ 3.000,00/mês</strong></li>
+          <li>Franquia: 500 chamados</li>
+          <li><strong>Adicional:</strong></li>
+          <li>• Nível 1: R$ 3,50</li>
+          <li>• Nível 2: R$ 4,50</li>
+          <li>• Massivos: R$ 1,50</li>
         </ul>
-      </nav>
+        <a href="https://wa.me/554732300424?text=Quero%20o%20pacote%20Atendimento%2024h%20-%20500%20chamados" target="_blank" class="btn whatsapp-button">
+          <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"/> Quero este pacote
+        </a>
+      </div>
+
+      <!-- Plano 2 -->
+      <div class="service-card">
+        <h3>🌙 Fora do Horário Comercial</h3>
+        <ul>
+          <li><strong>R$ 1.500,00/mês</strong></li>
+          <li>Franquia: 250 chamados</li>
+          <li><strong>Adicional:</strong></li>
+          <li>• Nível 1: R$ 3,50</li>
+          <li>• Nível 2: R$ 4,50</li>
+          <li>• Massivos: R$ 1,50</li>
+        </ul>
+        <a href="https://wa.me/554732300424?text=Quero%20o%20pacote%20Fora%20do%20Hor%C3%A1rio%20-%20250%20chamados" target="_blank" class="btn whatsapp-button">
+          <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"/> Quero este pacote
+        </a>
+      </div>
+
+      <!-- Plano 3 -->
+      <div class="service-card">
+        <h3>🎯 Finais de Semana e Feriados</h3>
+        <ul>
+          <li><strong>R$ 800,00/mês</strong></li>
+          <li>Franquia: 100 chamados</li>
+          <li><strong>Adicional:</strong></li>
+          <li>• Nível 1: R$ 3,50</li>
+          <li>• Nível 2: R$ 4,50</li>
+          <li>• Massivos: R$ 1,50</li>
+        </ul>
+        <a href="https://wa.me/554732300424?text=Quero%20o%20pacote%20Finais%20de%20Semana%20-%20100%20chamados" target="_blank" class="btn whatsapp-button">
+          <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"/> Quero este pacote
+        </a>
+      </div>
     </div>
-  </header>
 
-  <main>
-    <section id="home">
-      <h1>Seu suporte técnico interno com resposta rápida</h1>
-      <p>Equipe nível 3, sem enrolação e com atendimento sob medida pra provedores!</p>
-      <a href="#contato" class="btn">Fale com a gente</a>
-    </section>
+    <!-- Plano por chamado centralizado -->
+    <div style="display: flex; justify-content: center; margin-top: 40px;">
+      <div class="service-card" style="max-width: 500px;">
+        <h3>💡 Plano por chamado (sem mensalidade fixa)</h3>
+        <ul>
+          <li>• Nível 1: R$ 5,50 por chamado</li>
+          <li>• Nível 2: R$ 6,50 por chamado</li>
+          <li>• Massivos: R$ 3,50 por chamado</li>
+        </ul>
+        <a href="https://wa.me/554732300424?text=Quero%20o%20plano%20por%20chamado%20(s/mesalidade)" target="_blank" class="btn whatsapp-button">
+          <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"/> Quero este plano
+        </a>
+      </div>
+    </div>
+  </div>
+    
+    <!-- Orçamento personalizado -->
+<div style="margin-top: 60px; text-align: center;">
+  <h3 style="color: var(--primary-color); font-size: 1.6rem; margin-bottom: 20px;">
+    Não encontrou um plano ideal?
+  </h3>
+  <p style="font-size: 1.1rem; margin-bottom: 25px; max-width: 700px; margin-left: auto; margin-right: auto;">
+    Clique no botão abaixo e vamos montar um orçamento personalizado juntinhos! A PingDesk é flexível como fibra óptica 😉
+  </p>
+  <a href="https://wa.me/554732300424?text=Quero%20um%20or%C3%A7amento%20personalizado%20para%20suporte%20t%C3%A9cnico" 
+     target="_blank" 
+     class="btn whatsapp-button" 
+     style="font-size: 1.1rem;">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"/> Quero um orçamento personalizado
+  </a>
+</div>
 
-    <section id="sobre">
-      <h2>Sobre a PingDesk</h2>
-      <p>A gente entende de bastidores de provedor. E mais que isso, resolve!</p>
-    </section>
+</section>
 
-    <section id="contato">
-      <h2>Fale com a PingDesk</h2>
-      <p>📬 contato@pingdesk.com.br</p>
-      <p>📱 WhatsApp: (47) 3230-0424</p>
-    </section>
-  </main>
 
-  <script>
-    let lastScrollTop = 0;
-    const header = document.querySelector("header");
 
-    window.addEventListener("scroll", function() {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      header.style.top = (scrollTop > lastScrollTop) ? "-100px" : "0";
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
-  </script>
+        <section id="contact">
+            <div class="container">
+                <h2>Fale com a PingDesk!</h2>
+                <p>Estamos prontos para transformar seu suporte interno.</p>
+                <div class="contact-info">
+                    <p>📬 <a href="mailto:contato@pingdesk.com.br">contato@pingdesk.com.br</a></p>
+                    <a href="https://wa.me/554732300424" target="_blank" class="whatsapp-button">
+                        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon"/> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 PingDesk. Todos os direitos reservados.</p>
+            <p>Help Desk para Provedores de Internet • Respostas Rápidas</p>
+            <p>Feito com excelência por quem entende de suporte.</p>
+
+            <!-- Botões sociais adicionados aqui -->
+            <div class="social-buttons">
+                <a href="https://www.linkedin.com/company/pingdesk-central-help-desk/" target="_blank" rel="noopener noreferrer" class="btn linkedin">LinkedIn</a>
+                <a href="https://www.instagram.com/ping.desk/" target="_blank" rel="noopener noreferrer" class="btn instagram">Instagram</a>
+            </div>
+        </div>
+    </footer>
+    
+<script>
+  let lastScrollTop = 0;
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scroll pra baixo - esconde
+      header.style.top = "-100px";
+    } else {
+      // Scroll pra cima - mostra
+      header.style.top = "0";
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
+
 </body>
 </html>

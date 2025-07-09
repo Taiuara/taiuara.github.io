@@ -35,14 +35,15 @@
     <title>PingDesk - Central Help-Desk para Provedores de Internet</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+    <style>
         :root {
             --primary-color: #007bff;
             --secondary-color: #28a745;
             --dark-color: #47484a;
             --light-color: #f0f0f0;
             --white-color: #ffffff;
-            --border-radius: 8px;
-            --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         * {
@@ -95,7 +96,7 @@
             background: linear-gradient(135deg, #e0f2ff, #f7faff);
             border: 1px solid rgba(0, 123, 255, 0.15);
             box-shadow: 0 4px 8px rgba(0, 123, 255, 0.05);
-            border-radius: 10px;
+            border-radius: 12px;
             margin: 40px 0;
             padding: 60px 20px;
             text-align: center;
@@ -136,10 +137,16 @@
 
         .service-card, .step-card {
             background-color: var(--white-color);
-            padding: 20px;
+            padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover, .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
         }
 
         .features-list {
@@ -185,35 +192,48 @@
             display: inline-block;
             font-weight: 600;
         }
+
+        .highlight-box {
+            background-color: #ffffff;
+            border: 1px solid #d6e9f9;
+            border-left: 5px solid var(--primary-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-top: 30px;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="#home" class="logo">PingDesk</a>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Sobre a PingDesk</a></li>
-                    <li><a href="#how-it-works">Como Funciona</a></li>
-                    <li><a href="#services">Nossos Serviços</a></li>
-                    <li><a href="#why-choose">Por que escolher?</a></li>
-                    <li><a href="#pricing">Planos e Pacotes</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <main>
-        <section id="home">
-            <div class="content">
-                <h1>Seu suporte técnico interno com resposta rápida, equipe nível 3 e zero enrolação.</h1>
-                <p>Especialista em Help Desk para provedores de internet.</p>
-                <p>Mais agilidade, mais organização, menos dor de cabeça.</p>
-                <a href="#contact" class="btn">Fale com a gente</a>
-                <a href="#contact" class="btn" style="margin-left: 20px;">Solicite um orçamento</a>
-            </div>
+<header>
+  <div class="container">
+    <a class="logo" href="#">PingDesk</a>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section id="home">
+  <div class="container">
+    <h1>Seu suporte técnico interno com resposta rápida</h1>
+    <p>Especialista em Help Desk para provedores de internet.</p>
+    <div class="highlight-box">
+      <h3>💡 PingDesk resolve com agilidade e profissionalismo</h3>
+      <p>Atendimento 24/7 com equipe treinada e integração total com sua operação.</p>
+      <p>Transforme seu suporte interno em um setor de excelência.</p>
+      <a href="#contact" class="btn">Fale com a gente</a>
+    </div>
+  </div>
         </section>
 
         <section id="about">
